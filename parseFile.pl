@@ -41,12 +41,13 @@ my $prodString = "";
 #my @itm;
 my $itm_count = "";
 my $manufactureFlag = "false";
-my $insertString = "INSERT INTO inbound_record (tp_name, tp_inv_num, ndc_num, lot_num, tp_item_id, qty, current_qty, prod_name, exp_date, prod_desc) VALUES(";
+#my $insertString = "INSERT INTO inbound_record (tp_name, tp_inv_num, ndc_num, lot_num, tp_item_id, qty, current_qty, prod_name, exp_date, prod_desc) VALUES(";
+my $insertString = "INSERT INTO inbound_record (tp_name, tp_inv_num, tp_item_id, ndc_num, lot_num, qty, current_qty, prod_name, exp_date, prod_desc) VALUES(";
 my $closeStr = "\)\;";
 my $tpartner = "Capital Wholesale Drug Company";
 
 
-open (CHECKBOOK, "574465.txt") || die "couldn't open the file!";
+open (CHECKBOOK, "585996.txt") || die "couldn't open the file!";
 
 while ($record = <CHECKBOOK>) {
 	my @itm;

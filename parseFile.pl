@@ -46,7 +46,7 @@ my $closeStr = "\)\;";
 my $tpartner = "Capital Wholesale Drug Company";
 
 
-open (CHECKBOOK, "305088.txt") || die "couldn't open the file!";
+open (CHECKBOOK, "574465.txt") || die "couldn't open the file!";
 
 while ($record = <CHECKBOOK>) {
 	my @itm;
@@ -163,12 +163,12 @@ while ($record = <CHECKBOOK>) {
 			}
 		}
 		
-		my $testQty = substr $record, 0, 5;
-	    if($testQty eq "SN1**"){
+		my $testQty = substr $record, 0, 3;
+	    if($testQty eq "SN1"){
 	        
 			if($infoFlag eq "true"){
 					#print $testQty . " ";
-				$qty1 = substr $record, 5;
+				$qty1 = substr $record, 6;
 					#print $qty1 . " ";
 				my $indQty1 = index($qty1,"*");
 					#print $indQty1 . " ";
@@ -221,7 +221,7 @@ while ($record = <CHECKBOOK>) {
 					#print $testManufacturer . " ";
 				$myManufacturer1 = substr $record, 6;
 					#print $myManufacturer1 . " ";
-				my $indManufacturer1 = index($myManufacturer1,"*");
+				my $indManufacturer1 = index($myManufacturer1,"~");
 					#print $indManufacturer1 . " ";
 				$myManufacturer2 = substr $myManufacturer1, 0, $indManufacturer1;
 				$myManufacturer2 = $myManufacturer2 . " ";
